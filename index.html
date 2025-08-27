@@ -152,7 +152,6 @@
                         </button>
                     </div>
 
-                    <!-- Reorganized into a 2-column layout -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <!-- Left Column -->
                         <div class="space-y-6">
@@ -160,7 +159,6 @@
                                 <h4><i class="fas fa-play-circle"></i>Audio Player</h4>
                                 <audio id="audio-player" controls></audio>
                             </div>
-                            <!-- FIX: Set a fixed height for transcription cards -->
                             <div class="analysis-card h-96">
                                 <h4><i class="fas fa-microphone-alt"></i>English Transcription</h4>
                                 <div id="transcription-en" class="prose scrollable-content"></div>
@@ -177,7 +175,6 @@
                                 <h4><i class="fas fa-chart-line"></i>Call Quality Metrics</h4>
                                 <canvas id="qualityChart"></canvas>
                             </div>
-                            <!-- FIX: Set a fixed height for analysis cards -->
                             <div class="analysis-card h-64">
                                 <h4><i class="fas fa-users"></i>Speakers</h4>
                                 <div id="speaker-diarization" class="prose scrollable-content"></div>
@@ -207,7 +204,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const API_BASE_URL = 'http://localhost:8000';
+            // FIX: Use a relative path for the API base URL
+            const API_BASE_URL = '/api';
+
             const audioListEl = document.getElementById('audio-list');
             const placeholderEl = document.getElementById('placeholder');
             const loaderEl = document.getElementById('loader');
@@ -271,7 +270,8 @@
                 loaderEl.classList.add('flex');
                 currentFilename = filename;
 
-                audioPlayer.src = `${API_BASE_URL}/audio/${filename}`;
+                // FIX: Use a relative URL for the audio player source
+                audioPlayer.src = `/audio/${filename}`;
 
                 try {
                     const formData = new FormData();
