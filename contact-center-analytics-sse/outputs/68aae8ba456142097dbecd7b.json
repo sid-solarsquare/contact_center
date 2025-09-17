@@ -1,0 +1,130 @@
+{
+  "transcript": [
+    {
+      "speaker": "Nikhil",
+      "start_time": 0.0,
+      "end_time": 0.22,
+      "transcript_local_language": "Hello",
+      "transcript_english": "Hello"
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 0.81,
+      "end_time": 3.01,
+      "transcript_local_language": "Hello Nikhil ji, main Soley Square se.",
+      "transcript_english": "Hello Nikhil ji, I am from Soley Square."
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 3.01,
+      "end_time": 3.73,
+      "transcript_local_language": "Haan ji bol raha hoon.",
+      "transcript_english": "Yes, I am speaking."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 4.14,
+      "end_time": 11.45,
+      "transcript_local_language": "Soley Square se. Haan boliye, boliye. Ki mujhe ek do cheez aur jaanni thi. Aapka khud ka ghar hai ya flat system hai, sir?",
+      "transcript_english": "From Soley Square. Yes, speak. I wanted to know one or two more things. Do you have your own house or is it a flat system, sir?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 11.93,
+      "end_time": 13.25,
+      "transcript_local_language": "Nahi, nahi, khud ka ghar hai, ma'am.",
+      "transcript_english": "No, no, it's my own house, ma'am."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 13.78,
+      "end_time": 16.03,
+      "transcript_local_language": "Aur meter property pe kiska naam hai, sir?",
+      "transcript_english": "And whose name is on the meter property, sir?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 16.63,
+      "end_time": 16.81,
+      "transcript_local_language": "Haan.",
+      "transcript_english": "Yes."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 17.51,
+      "end_time": 18.5,
+      "transcript_local_language": "Aapka hi naam hai?",
+      "transcript_english": "Is it your name?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 19.34,
+      "end_time": 20.89,
+      "transcript_local_language": "Haan, nahi, mere daddy ke naam pe hai.",
+      "transcript_english": "Yes, no, it's in my dad's name."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 21.5,
+      "end_time": 23.95,
+      "transcript_local_language": "Achcha, woh aapke saath? Ek mummy ke naam pe hai, daddy ke naam pe hai.",
+      "transcript_english": "Okay, are they with you? Is it in mom's name, or dad's name?"
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 24.58,
+      "end_time": 28.14,
+      "transcript_local_language": "Achcha, matlab property kis ke naam pe hai? Woh aapke father?",
+      "transcript_english": "Okay, so whose name is the property under? Is it your father's?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 28.14,
+      "end_time": 29.83,
+      "transcript_local_language": "Family owner hai, family owner hai.",
+      "transcript_english": "It's a family owner, family owner."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 30.73,
+      "end_time": 35.13,
+      "transcript_local_language": "Okay, okay. Aur matlab main decision aap lenge ya aapke parents lenge?",
+      "transcript_english": "Okay, okay. And so, will you take the main decision or will your parents take it?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 35.91,
+      "end_time": 36.63,
+      "transcript_local_language": "Mai hi loonga.",
+      "transcript_english": "I will take it."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 37.53,
+      "end_time": 41.93,
+      "transcript_local_language": "Okay, okay. Aur sir, aapka bijli ka bill abhi kitna aa jaa raha hai?",
+      "transcript_english": "Okay, okay. And sir, what is your current electricity bill?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 42.66,
+      "end_time": 44.13,
+      "transcript_local_language": "Around four to five thousand.",
+      "transcript_english": "Around four to five thousand."
+    },
+    {
+      "speaker": "Agent",
+      "start_time": 45.09,
+      "end_time": 48.09,
+      "transcript_local_language": "Aur aapka jo chhat hai, uska square feet kitna hoga, sir?",
+      "transcript_english": "And your roof, what would be its square footage, sir?"
+    },
+    {
+      "speaker": "Nikhil",
+      "start_time": 48.74,
+      "end_time": 49.63,
+      "transcript_local_language": "Do hazaar.",
+      "transcript_english": "Two thousand."
+    }
+  ]
+}

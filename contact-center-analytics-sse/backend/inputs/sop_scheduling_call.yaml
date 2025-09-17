@@ -1,0 +1,20 @@
+# Script Adherence for a preliminary Scheduling & Qualification Call.
+# This is different from a full sales pitch.
+
+sop_checklist:
+  - key: "GREETING"
+    point: "Agent must greet the customer and state their name and company."
+  - key: "CONFIRM_INQUIRY"
+    point: "Agent must confirm the reason for the call is the customer's solar inquiry."
+  - key: "QUALIFY_ROOF"
+    point: "Agent must ask about the customer's roof type (e.g., RCC) and approximate area."
+  - key: "QUALIFY_BILL"
+    point: "Agent must ask about the customer's typical monthly electricity bill."
+  - key: "QUALIFY_OWNERSHIP"
+    point: "Agent must ask about the meter and property ownership."
+  - key: "SCHEDULE_MEETING"
+    point: "Agent must schedule a specific date and time for the follow-up meeting."
+  - key: "CONFIRM_ADDRESS"
+    point: "Agent must confirm the customer's address or landmark."
+  - key: "EXPLAIN_NEXT_STEPS"
+    point: "Agent must clearly explain the immediate next steps (e.g., creating a WhatsApp group)."

@@ -1,0 +1,351 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Darker text for readability */
+}
+
+/* Custom Colors based on the image's aesthetic and new white theme */
+:root {
+    --gradient-start: #011C4F; /* Dark blue from image */
+    --gradient-end: #0D72B7;   /* Lighter blue from image */
+
+    --primary-main-text: #0D72B7; /* Main blue for headings, active states */
+    --info-custom: #00bcd4; /* A vibrant secondary blue/cyan */
+    --success-custom: #28a745; /* Standard green for positive outcomes */
+    --warning-custom: #ffc107; /* Standard yellow for neutral/caution */
+    --danger-custom: #dc3545; /* Standard red for negative outcomes */
+
+    --card-border-light: #e9ecef; /* Light grey border for cards */
+    --navbar-bg-light: #ffffff; /* White background for navbar */
+    --text-muted-custom: #6c757d; /* Standard muted text */
+}
+
+/* Gradient Background for Banners/Buttons */
+.bg-gradient {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+/* Text with Gradient */
+.text-primary-gradient {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600; /* Slightly bold for headings */
+}
+
+/* Buttons with Gradient */
+.btn-primary-gradient {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    border: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-primary-gradient:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #ffffff; /* Keep text white on hover */
+}
+.btn-primary-gradient:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Bootstrap's default focus shadow for primary */
+}
+
+/* Card Header Background with subtle gradient */
+.bg-gradient-header {
+    background: linear-gradient(to right, #f0f2f5, #e0e6ed); /* Lighter gradient for headers */
+    color: var(--primary-main-text); /* Dark blue text on light gradient header */
+    border-bottom: 1px solid var(--card-border-light);
+    font-weight: 500;
+}
+
+/* Text Colors */
+.text-info-custom { color: var(--info-custom) !important; }
+.text-muted-custom { color: var(--text-muted-custom) !important; }
+
+/* Outline Buttons */
+.btn-outline-info-custom {
+    color: var(--primary-main-text);
+    border-color: var(--primary-main-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-outline-info-custom:hover {
+    background-color: var(--primary-main-text);
+    color: #ffffff;
+}
+
+/* Banner Styling */
+.app-banner {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: #ffffff; /* White text on blue banner */
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-name {
+    font-size: 2.5rem; /* Slightly smaller, more professional */
+    font-weight: 600; /* Less aggressive bold */
+    margin-bottom: 0.2rem;
+}
+
+.tool-name {
+    font-size: 1.1rem;
+    font-weight: 400; /* Regular weight */
+    opacity: 0.9;
+}
+
+/* Navbar */
+.navbar-light.bg-light-custom {
+    background-color: var(--navbar-bg-light) !important;
+    border-bottom: 1px solid var(--card-border-light);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+.navbar-nav .nav-link {
+    color: #555; /* Darker text for light navbar */
+    font-weight: 400; /* Regular weight */
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--primary-main-text);
+}
+.navbar-nav .nav-link.active {
+    color: var(--primary-main-text);
+    border-bottom: 2px solid var(--primary-main-text);
+    font-weight: 500; /* Slightly bolder for active */
+}
+
+/* General Card Styling */
+.card {
+    border: 1px solid var(--card-border-light);
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+}
+
+.card-header {
+    /* Styles moved to .bg-gradient-header */
+    font-weight: 500; /* Slightly bolder for card headers */
+}
+
+/* Lead Score Card */
+#lead-score-card {
+    min-height: 150px;
+}
+
+.lead-score-display {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 2.2rem; /* Slightly smaller font */
+    font-weight: 600; /* Maintain impact */
+    min-width: 120px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Color coding for lead score */
+.bg-lead-hot { background-color: var(--success-custom); } /* Green */
+.bg-lead-warm { background-color: var(--warning-custom); color: #343a40 !important; } /* Yellow */
+.bg-lead-cold { background-color: var(--danger-custom); } /* Red */
+
+
+/* Transcript Box */
+.transcript-box {
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f0f2f5; /* Light grey background for transcript */
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--card-border-light);
+    color: #495057; /* Darker text for readability */
+}
+
+.transcript-line {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.speaker-agent {
+    color: var(--primary-main-text); /* Blue */
+    font-weight: 500; /* Less bold */
+}
+
+.speaker-customer {
+    color: var(--info-custom); /* Cyan/Teal */
+    font-weight: 500; /* Less bold */
+}
+
+/* SOP Table */
+.table {
+    color: #343a40;
+}
+.table thead th {
+    background-color: var(--gradient-header-bg); /* Use light gradient for header */
+    border-bottom: 1px solid var(--card-border-light);
+    color: var(--primary-main-text);
+    font-weight: 500;
+}
+.table tbody tr {
+    background-color: #ffffff;
+}
+.table-hover tbody tr:hover {
+    background-color: #f0f2f5; /* Light hover effect */
+}
+.table td, .table th {
+    border-color: var(--card-border-light);
+}
+
+.table-light-custom-header {
+    background-color: #f8f9fa; /* Light background for header */
+    border-bottom: 1px solid var(--card-border-light);
+}
+
+.table-light-custom-header th {
+    background-color: var(--bg-gradient-header); /* Use the subtle gradient for table header cells */
+    color: var(--primary-main-text);
+    font-weight: 500;
+}
+
+.badge.bg-secondary {
+    background-color: #adb5bd !important;
+    color: #ffffff !important;
+    font-weight: normal; /* Regular weight for badge text */
+}
+
+/* Justification */
+.app-banner .container, .navbar .container-fluid {
+    text-align: left; /* Enforce left alignment */
+}
+
+/* Styling for the new Audio Player */
+#audio-player {
+    height: 40px;
+    width: 60%; /* Adjust width as needed */
+    max-width: 400px;
+}
+
+/* Styles for Ask Questions Page */
+.transcript-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.transcript-column .card-header {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Styling for Call Quality Callouts */
+.callout-card {
+    background-color: #ffffff;
+    border: 1px solid var(--card-border-light);
+    border-left: 5px solid var(--primary-main-text);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.callout-card h6 {
+    margin-bottom: 0.25rem;
+    color: var(--text-muted-custom);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.callout-card p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+.callout-check-icon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.text-success {
+    color: var(--success-custom) !important;
+}
+.text-danger {
+    color: var(--danger-custom) !important;
+}
+
+#answer-box {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    min-height: 100px;
+    border: 1px solid var(--card-border-light);
+    margin-top: 1rem;
+}
+#answer-box p {
+    margin-bottom: 0;
+}
+
+#ask-page-content {
+    display: flex;
+    flex-direction: column;
+    height: 75vh; /* Set a fixed height for the container */
+}
+
+#chat-container {
+    flex-grow: 1; /* Allows the chat container to fill available space */
+    overflow-y: auto; /* This makes the chat scrollable */
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid var(--card-border-light);
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.chat-bubble {
+    padding: 0.75rem 1.25rem;
+    border-radius: 18px;
+    margin-bottom: 0.75rem;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+.user-question {
+    background-color: #e9ecef;
+    color: #343a40;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end; /* Aligns to the right */
+    margin-left: auto; /* Pushes it to the right */
+}
+
+.ai-answer {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: #ffffff;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start; /* Aligns to the left */
+}
+
+.ai-answer-prefix {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+    opacity: 0.9;
+}
+
+#ask-question-form {
+    flex-shrink: 0; /* Prevents the form from shrinking */
+}
+
+/* ---------------------------------- */
+/* Styles for Edit Functionality      */
+/* ---------------------------------- */
+
+.edit-textarea {
+    width: 100%;
+    height: 60vh;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+    border: 1px solid var(--card-border-light);
+    border-radius: 0.25rem;
+}

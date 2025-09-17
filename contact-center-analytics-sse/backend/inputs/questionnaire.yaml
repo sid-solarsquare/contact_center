@@ -1,0 +1,43 @@
+# Lead Scoring Questionnaire for SolarSquare
+# Each item represents a question to evaluate a lead's quality.
+# 'key' is a unique identifier for the question.
+# 'question' is the text used to find the answer in the transcript.
+# 'priority_answers' are responses that indicate a higher quality lead.
+
+lead_scoring_questionnaire:
+  - key: monthly_bill
+    question: "What is the customer's monthly electricity bill in Rupees?"
+    priority_answers:
+      - "More than rupees 1500"
+
+  - key: terrace_area
+    question: "What is the usable terrace area available for installation in square feet?"
+    priority_answers:
+      - "200 or more"
+
+  - key: roof_ownership
+    question: "Does the customer own the roof of the property?"
+    priority_answers:
+      - "Yes"
+
+  - key: roof_type
+    question: "What is the roof type of the property?"
+    priority_answers:
+      - "Reinforced cement concrete (RCC)"
+      - "Metal Sheet"
+
+  - key: solar_timeline
+    question: "What is the customer's timeline for going solar?"
+    priority_answers:
+      - "Immediately"
+      - "Within 3 months"
+
+  - key: construction_status
+    question: "Is the customer's house fully constructed?"
+    priority_answers:
+      - "Yes"
+
+  - key: power_cuts
+    question: "Does the customer face regular power cuts?"
+    priority_answers:
+      - "Yes"

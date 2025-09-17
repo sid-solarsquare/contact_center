@@ -1,0 +1,41 @@
+# Standard Operating Procedure for SolarSquare Sales Presentation
+# Based on the official sales slide deck.
+# 'key' is a unique identifier from the slide.
+# 'point' is the compliance requirement for the agent to cover during the call.
+
+sop_checklist:
+  - key: "SLIDE_1_2"
+    point: "Agent must greet the customer and introduce themselves and SolarSquare as India's #1 Home Solar Company."
+
+  - key: "SLIDE_3_4"
+    point: "Agent must ask the customer about their motivation for considering solar and how they heard about the company."
+
+  - key: "SLIDE_5_6"
+    point: "Agent must provide an overview of the topics to be covered in the call (the agenda)."
+
+  - key: "SLIDE_8_9"
+    point: "Agent must mention that SolarSquare was founded by IIT-Bombay engineers and has over 20,000 customers, referencing the PM Surya Ghar portal."
+
+  - key: "SLIDE_10"
+    point: "Agent must mention the company's high Google review rating (over 8,600 reviews, 4.8+ stars) as social proof."
+
+  - key: "SLIDE_13_14"
+    point: "Agent must ask probing questions to understand the customer's specific requirements (capacity, budget, financing, concerns)."
+
+  - key: "SLIDE_16"
+    point: "Agent must explain how the solar system and net metering work to provide power day and night."
+
+  - key: "SLIDE_19"
+    point: "Agent must state that customers can save up to 90% on their electricity bills."
+
+  - key: "SLIDE_22"
+    point: "Agent must highlight that SolarSquare is the only company offering a 'Guaranteed Savings' promise with no middlemen."
+
+  - key: "SLIDE_26_28"
+    point: "Agent must explain common points of failure in other solar installations (panel cracks, poor maintenance, weak structures)."
+
+  - key: "SLIDE_30"
+    point: "Agent must mention the use of high-quality 'Mono PERC Half Cut BIFACIAL' panels for better efficiency."
+
+  - key: "SLIDE_31"
+    point: "Agent must emphasize that every solar panel undergoes over 100 quality checks, including an X-ray (EL Image) test."
