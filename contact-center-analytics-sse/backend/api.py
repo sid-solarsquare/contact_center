@@ -56,7 +56,7 @@ QUESTIONNAIRE_PATH = INPUTS_DIR / "questionnaire.yaml"
 TEMP_DIR = Path("temp_uploads")
 TEMP_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR = Path(__file__).parent / "../outputs"
-
+PERSONA_QUESTIONNAIRE_PATH = INPUTS_DIR / "persona_questionnaire.yaml"
 
 # --- API Endpoints ---
 
@@ -95,8 +95,10 @@ async def process_audio_endpoint(audio: UploadFile = File(...)):
             sop_points = [item['point'] for item in sop_data.get('sop_checklist', [])]
 
         questionnaire = parse_questionnaire_yaml(str(QUESTIONNAIRE_PATH))
+        persona_guidelines = parse_questionnaire_yaml(str(PERSONA_QUESTIONNAIRE_PATH))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error parsing config files: {e}")
+
 
     # 3. Run the full pipeline
     try:
@@ -130,7 +132,7 @@ async def process_audio_endpoint(audio: UploadFile = File(...)):
         # # Check if all are not None
         # if not all(result is not None for result in enrichment_results_old):
         enrichment_tasks = [
-            agent_02a_persona_analyzer(transcript_data),
+            agent_02a_persona_analyzer(transcript_data, persona_guidelines),
             agent_02b_sop_adherence(transcript_data, sop_points),
             agent_02c_lead_scoring(transcript_data, questionnaire)
         ]

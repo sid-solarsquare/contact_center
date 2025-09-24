@@ -26,6 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="#" id="nav-home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="#" id="nav-persona">Detailed Persona</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" id="nav-sop">View Script Adherence SOP</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" id="nav-questionnaire">View Scoring Questionnaire</a></li>
                     <li class="nav-item"><a class="nav-link disabled" href="#" id="nav-ask">Ask Specific Questions</a></li>
@@ -46,7 +47,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <h5 class="text-info-custom">Deep Call Insights</h5>
-                            <p class="text-muted-custom">Emotion, sentiment, and detailed customer persona analysis.</p>
+                            <p class="text-muted-custom">Evidence-backed persona generation and detailed call quality metrics.</p>
                         </div>
                         <div class="col-md-4 mb-3">
                             <h5 class="text-info-custom">Compliance & Performance</h5>
@@ -86,8 +87,8 @@
                     </div>
                     <div class="col-md-7">
                         <div class="card h-100 shadow-sm">
-                            <div class="card-header bg-gradient-header"><h4>Customer Persona</h4></div>
-                            <div class="card-body" id="persona-details">
+                            <div class="card-header bg-gradient-header"><h4>Persona Summary</h4></div>
+                            <div class="card-body" id="persona-summary-card">
                             </div>
                         </div>
                     </div>
@@ -111,6 +112,12 @@
                      </div>
                 </div>
             </div>
+        </div>
+
+        <div id="persona-page" class="d-none">
+            <h2 class="text-primary-gradient mb-3">Detailed Persona Analysis</h2>
+            <div id="detailed-persona-container">
+                </div>
         </div>
 
         <div id="sop-page" class="d-none">

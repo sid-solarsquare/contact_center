@@ -108,43 +108,92 @@ def agent_01_foundational_processor(audio_file_object) -> dict:
             print("-----------------------------\n")
         return {}
 
+## OLDER BLOCK OF CODE - REPLACED BY DETAILED VERSION BELOW
+# async def agent_02a_persona_analyzer(transcript_data: dict) -> dict:
+#     """
+#     Analyzes the transcript to build a customer persona.
+#     """
+#     print("🚀 Executing Agent 02a: Persona Analyzer...")
+#     model = genai.GenerativeModel(FLASH_MODEL)
+#
+#     prompt = f"""
+#     Based on the following transcript, generate a JSON object for the customer persona.
+#     Analyze only the dialogue from the customer.
+#     The JSON must contain these keys:
+#     - "price_sensitivity": A rating from 0 (not sensitive) to 5 (very sensitive), with a brief "justification".
+#     - "quality_sensitivity": A rating from 0 to 5, with a "justification".
+#     - "technical_proficiency": A rating from 0 (non-technical) to 5 (very technical), with a "justification".
+#     - "sentiment": Choose one: 'Open', 'Excited', 'Un-excited', 'Rude', 'Not Interested'.
+#     - "occupation_inference": Infer the occupation if possible ('Business', 'Salaried', 'Other', 'Unknown').
+#     - "lead_source": Extract how they heard about the company, if mentioned.
+#     - "brand_impression_pre_call": ('Good', 'Bad', 'Neutral', 'Unknown').
+#
+#     Transcript:
+#     {json.dumps(transcript_data, indent=2)}
+#     """
+#     try:
+#         response = await model.generate_content_async(prompt)
+#         raw_response_text = response.candidates[0].content.parts[0].text
+#
+#         json_string = extract_json_from_text(raw_response_text)
+#         if not json_string:
+#             raise ValueError("Could not extract a valid JSON object from the model's response.")
+#
+#         json_response = json.loads(json_string)
+#         print("✅ Agent 02a: Complete.")
+#         return {"customer_persona": json_response}
+#     except Exception as e:
+#         print(f"❌ Agent 02a Error: {e}")
+#         return {"customer_persona": {"error": str(e)}}
 
-async def agent_02a_persona_analyzer(transcript_data: dict) -> dict:
+async def agent_02a_persona_analyzer(transcript_data: dict, persona_guidelines: Dict) -> dict:
     """
-    Analyzes the transcript to build a customer persona.
+    Analyzes the transcript to build a detailed, evidence-backed customer persona
+    based on a structured guideline.
     """
-    print("🚀 Executing Agent 02a: Persona Analyzer...")
+    print("🚀 Executing Agent 02a: Detailed Persona Analyzer...")
     model = genai.GenerativeModel(FLASH_MODEL)
 
     prompt = f"""
-    Based on the following transcript, generate a JSON object for the customer persona.
-    Analyze only the dialogue from the customer.
-    The JSON must contain these keys:
-    - "price_sensitivity": A rating from 0 (not sensitive) to 5 (very sensitive), with a brief "justification".
-    - "quality_sensitivity": A rating from 0 to 5, with a "justification".
-    - "technical_proficiency": A rating from 0 (non-technical) to 5 (very technical), with a "justification".
-    - "sentiment": Choose one: 'Open', 'Excited', 'Un-excited', 'Rude', 'Not Interested'.
-    - "occupation_inference": Infer the occupation if possible ('Business', 'Salaried', 'Other', 'Unknown').
-    - "lead_source": Extract how they heard about the company, if mentioned.
-    - "brand_impression_pre_call": ('Good', 'Bad', 'Neutral', 'Unknown').
+    You are an expert customer profiler and market researcher for a solar energy company.
+    Your task is to analyze the provided call transcript and generate a detailed customer persona based on the structured `persona_guidelines`.
 
-    Transcript:
-    {json.dumps(transcript_data, indent=2)}
+    INSTRUCTIONS:
+    1.  Carefully read the entire `call_transcript`.
+    2.  Iterate through each `category` and `point` in the `persona_guidelines`.
+    3.  For EACH point, you MUST find evidence in the transcript.
+    4.  Your final output must be a single JSON object with two top-level keys: "detailed_analysis" and "persona_summary".
+
+    The "detailed_analysis" key should contain a list of objects, one for each category in the guidelines. Each category object should have:
+    - "category": The name of the category (e.g., "Demographics & Customer Profile").
+    - "points": A list of analysis objects for each point within that category. Each analysis object must contain:
+        - "label": The human-readable label for the point (e.g., "Customer Type").
+        - "value": Your inferred value based on the transcript (e.g., "Residential"). If no information is found, this MUST be "Not Mentioned".
+        - "citation": The EXACT quote from the transcript that justifies your value. If no information, this should be null.
+        - "commentary": A brief, one-sentence AI justification for your inference. If no information, this should be null.
+
+    The "persona_summary" key should contain an object with:
+    - "persona_tagline": A concise, one-sentence summary of the customer (e.g., "Cost-conscious homeowner seeking quick ROI").
+    - "three_key_traits": A list of the three most important traits identified (e.g., ["Cost Savings", "High Urgency", "Price-Sensitive"]).
+    - "lead_potential_score": Your final assessment of the lead's potential ('High', 'Medium', or 'Low').
+
+    DATA:
+    {{
+        "persona_guidelines": {json.dumps(persona_guidelines, indent=2)},
+        "call_transcript": {json.dumps(transcript_data, indent=2)}
+    }}
     """
     try:
         response = await model.generate_content_async(prompt)
         raw_response_text = response.candidates[0].content.parts[0].text
 
-        json_string = extract_json_from_text(raw_response_text)
-        if not json_string:
-            raise ValueError("Could not extract a valid JSON object from the model's response.")
-
-        json_response = json.loads(json_string)
+        json_response = await parse_and_repair_json(raw_response_text, model)
         print("✅ Agent 02a: Complete.")
         return {"customer_persona": json_response}
     except Exception as e:
         print(f"❌ Agent 02a Error: {e}")
         return {"customer_persona": {"error": str(e)}}
+
 
 
 async def agent_02b_sop_adherence(transcript_data: dict, sop_points: List[str]) -> dict:

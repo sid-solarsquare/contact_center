@@ -1,0 +1,59 @@
+# Guideline for Detailed Customer Persona Analysis
+
+persona_guidelines:
+  - category: "Demographics & Customer Profile"
+    points:
+      - key: "customer_type"
+        label: "Customer Type"
+        description: "Determine if the customer is a residential homeowner, a commercial business, or an institutional entity."
+      - key: "property_type"
+        label: "Property Type"
+        description: "Identify the type of property, such as an individual house, apartment, factory, office, or school."
+      - key: "decision_maker"
+        label: "Decision Maker Role"
+        description: "Infer the role of the person on the call (e.g., Owner, Tenant, Facility Manager, etc.)."
+
+  - category: "Motivation & Intent"
+    points:
+      - key: "primary_motivation"
+        label: "Primary Motivation"
+        description: "Analyze the main reason the customer is considering solar (e.g., cost savings, sustainability, power backup)."
+      - key: "urgency_level"
+        label: "Urgency Level"
+        description: "Assess how urgently the customer wants to proceed (e.g., High, Medium, Low)."
+      - key: "buying_journey_stage"
+        label: "Stage in Buying Journey"
+        description: "Determine if the customer is in the Awareness, Consideration, or Ready-to-Purchase phase."
+
+  - category: "Energy Consumption & Financials"
+    points:
+      - key: "budget_willingness"
+        label: "Budget Willingness"
+        description: "Classify the customer's financial focus: Price-sensitive, Quality-focused, or ROI-focused."
+      - key: "financing_preference"
+        label: "Financing Preference"
+        description: "Listen for any mention of how the customer plans to pay (Upfront, Loan/EMI, Subsidies)."
+
+  - category: "Barriers & Concerns"
+    points:
+      - key: "mentioned_concerns"
+        label: "Mentioned Concerns"
+        description: "List any specific concerns mentioned by the customer, such as upfront cost, maintenance, or roof space."
+      - key: "objection_signals"
+        label: "Objection Handling Signals"
+        description: "Gauge the customer's reaction to potential issues: Strong resistance, Open to discussion, or Already convinced."
+
+  - category: "Engagement & Influence"
+    points:
+      - key: "knowledge_level"
+        label: "Level of Knowledge"
+        description: "Assess the customer's understanding of solar technology (High, Medium, or Low)."
+      - key: "openness_to_follow_up"
+        label: "Openness to Follow-up"
+        description: "Determine if the customer is responsive, hesitant, or non-committal about next steps."
+
+  - category: "Opportunity Signals"
+    points:
+      - key: "cross_sell_potential"
+        label: "Cross-Sell Potential"
+        description: "Identify any opportunities to cross-sell other products like battery storage, EV charging, or maintenance contracts."
